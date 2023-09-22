@@ -21,15 +21,50 @@ nav {
   align-items: center;
 }
 
+.nav-logo {
+  margin-left: 10px;
+  font-size: 30px;
+  font-weight: 800;
+  /* border: 2px solid black; */
+}
+
+.nav-menu {
+  /* border: 2px solid black; */
+  margin-right: 10px;
+}
+
+.nav-link {
+  text-decoration: none;
+  margin-left: 10px;
+  color: #222222;
+  font-size: 14px;
+
+}
+
+.nav-link:hover {
+  font-weight: 600;
+}
 .main-div {
-  border: 2px solid #222222;
+  /* border: 2px solid #222222; */
   margin: 5px 0 5px 0;
   min-height: calc(100vh - 60px);
 }
 
 .art-gallery {
-  border: 2px solid #222222;
+  /* border: 2px solid #222222; */
   width: 100%;
+  display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 5px;
+  }
+  
+  .art {
+    /* border: 2px solid black; */
+  }
+  
+  .art img {
+    width: 100%;
+    height: 100%;
 }
 
 footer {
