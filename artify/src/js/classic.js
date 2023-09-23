@@ -21,16 +21,7 @@ unsplash.search.getPhotos({
 
     const getUrls = photos.map((i) => {
       
-      const artObject = {
-        id: i.id,
-        description: i.alt_description,
-        name: i.name,
-        date: i.created_at,
-        url: i.urls.regular,
-        tag: ["all"],
-        portfolio: i.user.portfolio_url,
-        favourite: false,
-      };
+      
       
       return (
         `<div class="art">

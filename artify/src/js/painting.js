@@ -10,7 +10,7 @@ const unsplash = createApi({
 
 
 unsplash.search.getPhotos({
-  query: 'Modern',
+  query: 'Painting',
     page: 1,
   perPage: 30,
   orientation: 'squarish',
