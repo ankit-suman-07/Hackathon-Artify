@@ -6,9 +6,7 @@ const artGallery = document.querySelector('.art-gallery');
 
 const displayID = async () => {
   try {
-    console.log('-----');
       const fav = FavState.getFavourite;
-    console.log(fav);
 
     const photoPromises = fav.map(async (photoId) => {
       const photo = await unsplash.photos.get({ photoId });
@@ -22,8 +20,8 @@ const displayID = async () => {
     });
 
       const getUrls = photos.map((i) => {
-          console.log(i.response.id);
-          console.log(fav);
+          console.log(photos.length);
+          
       if (fav.includes(i.response.id)) {
         return (
           `<div class="art">
@@ -42,9 +40,9 @@ const displayID = async () => {
       return ''; // Return an empty string for non-favorite photos
     });
 
-    artGallery.innerHTML = getUrls.join('');
+      artGallery.innerHTML = getUrls.join('');
+      
 
-    console.log('-----');
   } catch (error) {
     console.error('Error:', error);
   }
