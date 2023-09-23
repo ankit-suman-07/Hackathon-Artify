@@ -1,4 +1,6 @@
 import { createApi } from 'unsplash-js';
+import EmptyHeart from "../assets/empty.png";
+import FilledHeart from "../assets/filled.png";
 
 const artGallery = document.querySelector('.art-gallery');
 const unsplash = createApi({
@@ -6,7 +8,7 @@ const unsplash = createApi({
 });
 
 unsplash.search.getPhotos({
-  query: 'Art',
+  query: 'Modern Art',
   page: 1,
   perPage: 12,
   orientation: 'squarish',
@@ -19,6 +21,10 @@ unsplash.search.getPhotos({
       return(
       `<div class="art" >
         <img src="${i.urls.regular}" />
+        <div class="art-details" >
+          <div class="art-heart" > <img src="${FilledHeart}" />  </div>
+          <div class="art-name" > ${i.user.name} </div>
+        </div>
       </div>`);
     })
     artGallery.innerHTML = getUrls.join('');
