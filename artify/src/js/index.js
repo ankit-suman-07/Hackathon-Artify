@@ -7,26 +7,23 @@ const unsplash = createApi({
   accessKey: 'NJnPX52l0KU_-gIWlM7F3Bf7XnnxFI-BvOquBZqMP0g',
 });
 
+export const all = [];
+
 unsplash.search.getPhotos({
-  query: 'Modern Art',
+  query: 'Art',
   page: 1,
-  perPage: 12,
+  perPage: 100,
   orientation: 'squarish',
-  orderBy: 'latest'
-}).then(result => {
+  orderBy: 'latest',
+}).then((result) => {
   if (result.type === 'success') {
     const photos = result.response.results;
-    console.log(photos);
+
     const getUrls = photos.map((i) => {
-      return(
-      `<div class="art" >
-        <img src="${i.urls.regular}" />
-        <div class="art-details" >
-          <div class="art-heart" > <img src="${FilledHeart}" />  </div>
-          <div class="art-name" > ${i.user.name} </div>
-        </div>
-      </div>`);
-    })
-    artGallery.innerHTML = getUrls.join('');
+      all.push(i);
+      
+    });
+
+    // artGallery.innerHTML = getUrls.join('');
   }
-})
+});
