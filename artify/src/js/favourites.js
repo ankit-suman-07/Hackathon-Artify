@@ -1,8 +1,8 @@
-import { unsplash } from "./index.js";
-import FavState from "./favState.js";
-import EmptyHeart from "../assets/empty.png";
-import FilledHeart from "../assets/filled.png";
-import State from "./dispImageState.js";
+import { unsplash } from "/js/index.js";
+import FavState from "/js/favState.js";
+import EmptyHeart from "/assets/empty.png";
+import FilledHeart from "/assets/filled.png";
+import State from "/js/dispImageState.js";
 
 
 const artGallery = document.querySelector('.art-gallery');
@@ -38,7 +38,7 @@ const displayID = async () => {
                   data-id="${i.response.id}"
                 />
               </div>
-              <a href="../pages/imagePage.html" class="art-view-btn" data-id="${i.response.id}" > View Image </a>
+              <a href="/pages/imagePage.html" class="art-view-btn" data-id="${i.response.id}" > View Image </a>
             </div>
           </div>`
         );

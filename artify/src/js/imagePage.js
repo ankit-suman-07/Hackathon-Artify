@@ -1,9 +1,9 @@
 // imagePage.js
-import State from "./dispImageState.js";
-import { unsplash } from "./index.js";
-import FavState from "./favState.js";
-import EmptyHeart from "../assets/empty.png";
-import FilledHeart from "../assets/filled.png";
+import State from "/js/dispImageState.js";
+import { unsplash } from "/js/index.js";
+import FavState from "/js/favState.js";
+import EmptyHeart from "/assets/empty.png";
+import FilledHeart from "/assets/filled.png";
 
 const artGallery = document.querySelector('.art-gallery');
 
@@ -65,7 +65,6 @@ const displayImage = async () => {
             const heartImage = document.querySelector('.art-heart img');
             heartImage.addEventListener('click', () => {
                 if (!heartImage.src.endsWith(EmptyHeart)) {
-                    // Change the image to empty and update the 'isFilled' flag
                     heartImage.src = EmptyHeart;
                     FavState.removeFav(imageId);
                 } else {

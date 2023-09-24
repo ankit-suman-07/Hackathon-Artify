@@ -1,8 +1,8 @@
 import { createApi } from 'unsplash-js';
-import EmptyHeart from "../assets/empty.png";
-import FilledHeart from "../assets/filled.png";
-import FavState from "./favState.js";
-import State from "./dispImageState.js";
+import EmptyHeart from "/assets/empty.png";
+import FilledHeart from "/assets/filled.png";
+import FavState from "/js/favState.js";
+import State from "/js/dispImageState.js";
 
 const artGallery = document.querySelector('.art-gallery');
 let page = 1; // Initialize page as 1
@@ -43,7 +43,7 @@ const fetchImagesForPage = async (page) => {
                   data-id="${i.id}"
                 />
               </div>
-              <a href="../pages/imagePage.html" class="art-view-btn" data-id="${i.id}" > View Image </a>
+              <a href="/pages/imagePage.html" class="art-view-btn" data-id="${i.id}" > View Image </a>
             </div>
           </div>`
         );

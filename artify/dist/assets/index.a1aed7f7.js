@@ -11,6 +11,6 @@
                   data-id="${i.id}"
                 />
               </div>
-              <a href="./pages/imagePage.html" class="art-view-btn" data-id="${i.id}" > View Image </a>
+              <a href="/pages/imagePage.html" class="art-view-btn" data-id="${i.id}" > View Image </a>
             </div>
           </div>`}),o=document.querySelector(".fav-count");o&&(o.textContent=S.getFavourite.length.toString()),_e.innerHTML+=n.join(""),document.querySelectorAll(".art-view-btn").forEach(i=>{const h=i.getAttribute("data-id");i.addEventListener("click",()=>{j.setImageID=h,console.log(j.getImageID)})}),document.querySelectorAll(".art-heart img").forEach(i=>{const h=i.getAttribute("data-id");i.addEventListener("click",()=>{i.src.endsWith(O)?(i.src=x,S.setFavourite=h):(i.src=O,S.removeFav(h));const P=document.querySelector(".fav-count");P&&(P.textContent=S.getFavourite.length.toString())})})}}catch(t){console.error("Error:",t)}},Ze=()=>{E<3&&(E++,K(E))},B=document.getElementById("nextButton");B&&B.addEventListener("click",Ze);K(E);const C=document.querySelector(".burger-menu"),G=document.querySelector(".nav-menu");C.addEventListener("click",()=>{C.classList.toggle("active"),G.classList.toggle("active")});document.querySelectorAll(".nav-link").forEach(e=>e.addEventListener("click",()=>{C.classList.remove("active"),G.classList.remove("active")}));
