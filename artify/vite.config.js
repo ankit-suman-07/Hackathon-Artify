@@ -5,7 +5,7 @@ export default defineConfig({
   root: join(process.cwd(), 'src'),
   server: {
     port: 3000,
-    open: '/index.html',
+    open: './index.html',
   },
   preview: {
     port: 8080,
