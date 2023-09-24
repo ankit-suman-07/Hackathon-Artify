@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
+html,
+body {
+  margin: 5px;
+  padding: 0px;
+}
+
+
+
+nav {
+  border: 2px solid #222222;
+  height: 60px;
+  /* width: 100%; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  margin-left: 10px;
+  font-size: 30px;
+  font-weight: 800;
+  /* border: 2px solid black; */
+}
+
+.nav-menu {
+  /* border: 2px solid black; */
+  margin-right: 10px;
+}
+
+.nav-link {
+  text-decoration: none;
+  margin-left: 10px;
+  color: #222222;
+  font-size: 14px;
+
+}
+
+.nav-link:hover {
+  font-weight: 600;
+}
+
+.selected {
+  font-weight: 800;
+}
+
+.main-div {
+  /* border: 2px solid #222222; */
+  margin: 10px 0 10px 0;
+  min-height: calc(100vh - 60px);
+}
+
+.art-gallery {
+  /* border: 2px solid #222222; */
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.art-img img {
+  width: 100%;
+}
+
+
+.art-top {
+  /* border: 2px solid black; */
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.art-heart,
+.art-profile {
+  /* border: 2px solid red; */
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.art-heart img {
+  height: 80%;
+}
+
+.art-profile img {
+  height: 80%;
+  border: 5px solid #222222;
+  border-radius: 50%;
+}
+
+.large {
+  height: 100px;
+}
+
+.tag {
+  border: 2px solid tomato;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: 600;
+  margin: 5px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  background-color: tomato;
+}
+
+.portfolio-link {
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.large-tag {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+
+.art-name {
+  min-height: 50px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.art-main {
+  margin-top: 20px;
+}
+
+.detail-label {
+  /* border: 1px solid red; */
+  min-width: 100px;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 10px;
+}
+
+footer {
+  border: 2px solid #222222;
+  font-size: 14px;
+  /* width: 100%; */
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -2,6 +2,7 @@ import { createApi } from 'unsplash-js';
 import EmptyHeart from "../assets/empty.png";
 import FilledHeart from "../assets/filled.png";
 import FavState from "./favState.js";
+import State from "./dispImageState.js";
 
 const artGallery = document.querySelector('.art-gallery');
 let page = 1; // Initialize page as 1
@@ -14,7 +15,6 @@ export const unsplash = createApi({
 const fetchImagesForPage = async (page) => {
   try {
     const result = await unsplash.search.getPhotos({
-      // 'Modern, Classic, Contemporary, Painting, Sculptures, Abstract'
       query: 'Classic',
       page: page,
       perPage: 12,
@@ -29,6 +29,10 @@ const fetchImagesForPage = async (page) => {
         const favList = FavState.getFavourite;
         const isFavorite = favList.includes(i.id);
         const src = isFavorite ? FilledHeart : EmptyHeart;
+
+
+
+
         return (
           `<div class="art">
             <img src="${i.urls.regular}" />
@@ -39,20 +43,35 @@ const fetchImagesForPage = async (page) => {
                   data-id="${i.id}"
                 />
               </div>
-              <div class="art-name">${i.user.name}</div>
+              <a href="../pages/imagePage.html" class="art-view-btn" data-id="${i.id}" > View Image </a>
             </div>
           </div>`
         );
       });
 
+      const favCount = document.querySelector('.fav-count'); // Select the first element with the class 'fav-count'
+      if (favCount) {
+        favCount.textContent = FavState.getFavourite.length.toString(); // Convert the number to a string and update the text content
+      }
+
       artGallery.innerHTML += getUrls.join('');
+
+      const a_tag = document.querySelectorAll('.art-view-btn');
+      a_tag.forEach((btn) => {
+        const imageId = btn.getAttribute('data-id');
+        btn.addEventListener('click', () => {
+          State.setImageID = imageId;
+          console.log(State.getImageID);
+        });
+      });
+
 
       // Add event listeners to the heart images for this page
       const heartImages = document.querySelectorAll('.art-heart img');
       heartImages.forEach((heartImage) => {
         const imageId = heartImage.getAttribute('data-id');
         heartImage.addEventListener('click', () => {
-          console.log(imageId);
+
 
           if (!heartImage.src.endsWith(EmptyHeart)) {
             // Change the image to empty and update the 'isFilled' flag
@@ -62,6 +81,10 @@ const fetchImagesForPage = async (page) => {
           else {
             heartImage.src = FilledHeart;
             FavState.setFavourite = imageId;
+          }
+          const favCount = document.querySelector('.fav-count'); // Select the first element with the class 'fav-count'
+          if (favCount) {
+            favCount.textContent = FavState.getFavourite.length.toString(); // Convert the number to a string and update the text content
           }
         });
       });
@@ -78,9 +101,11 @@ const nextPage = () => {
   }
 }
 
-// Add an event listener to the "Next" button
+
 const nextButton = document.getElementById('nextButton');
-nextButton.addEventListener('click', nextPage);
+if (nextButton) {
+  nextButton.addEventListener('click', nextPage);
+}
 
 // Initial fetch for the first page
 fetchImagesForPage(page);

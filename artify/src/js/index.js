@@ -17,7 +17,7 @@ const fetchImagesForPage = async (page) => {
     const result = await unsplash.search.getPhotos({
       query: 'Modern, Classic, Contemporary, Painting, Sculptures, Abstract',
       page: page,
-      perPage: 12,
+      perPage: 8,
       orientation: 'squarish',
       orderBy: 'latest',
     });
