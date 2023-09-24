@@ -30,9 +30,6 @@ const fetchImagesForPage = async (page) => {
         const isFavorite = favList.includes(i.id);
         const src = isFavorite ? FilledHeart : EmptyHeart;
 
-
-
-
         return (
           `<div class="art">
             <img src="${i.urls.regular}" />
@@ -49,9 +46,11 @@ const fetchImagesForPage = async (page) => {
         );
       });
 
-      const favCount = document.querySelector('.fav-count'); // Select the first element with the class 'fav-count'
+      // Select the first element with the class 'fav-count'
+      const favCount = document.querySelector('.fav-count');
       if (favCount) {
-        favCount.textContent = FavState.getFavourite.length.toString(); // Convert the number to a string and update the text content
+        // Convert the number to a string and update the text content
+        favCount.textContent = FavState.getFavourite.length.toString();
       }
 
       artGallery.innerHTML += getUrls.join('');
@@ -64,7 +63,6 @@ const fetchImagesForPage = async (page) => {
           console.log(State.getImageID);
         });
       });
-
 
       // Add event listeners to the heart images for this page
       const heartImages = document.querySelectorAll('.art-heart img');

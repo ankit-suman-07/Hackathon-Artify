@@ -15,7 +15,6 @@ body {
 nav {
   border: 2px solid #222222;
   height: 60px;
-  /* width: 100%; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -28,7 +27,6 @@ nav {
   font-size: 30px;
   font-weight: 800;
   text-decoration: none;
-  /* border: 2px solid black; */
 }
 
 a {
@@ -36,7 +34,6 @@ a {
 }
 
 .burger-menu {
-  /* border: 2px solid #ffff; */
   position: fixed;
   width: 60px;
   height: 60px;
@@ -48,7 +45,6 @@ a {
 }
 
 .nav-menu {
-  /* border: 2px solid black; */
   margin-right: 10px;
 }
 
@@ -76,7 +72,6 @@ a {
 
 .welcome {
   background-color: lightgray;
-  /* border: 2px solid #222222; */
   margin-top: 10px;
   padding: 20px;
   display: flex;
@@ -85,8 +80,7 @@ a {
 }
 
 .text-box {
-  padding: 20px;
-  /* border: 2px solid #222222; */
+  padding: 40px 20px 40px 20px;
   max-width: 800px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 16px;
@@ -99,7 +93,6 @@ a {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 36px;
   font-weight: 800;
-  /* font-style: italic; */
 }
 
 .one {
@@ -131,13 +124,11 @@ a {
 }
 
 .main-div {
-  /* border: 2px solid #222222; */
   margin: 10px 0 10px 0;
   min-height: calc(100vh - 60px);
 }
 
 .art-gallery {
-  /* border: 2px solid #222222; */
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -156,7 +147,6 @@ a {
 }
 
 .art-details {
-  /* border: 2px solid #222222; */
   height: 40px;
   display: flex;
   flex-direction: row;
@@ -165,8 +155,6 @@ a {
 }
 
 .art-name {
-  /* border: 1px solid green;
-              background-color: red; */
   width: calc(100% - 30px);
   font-size: 12px;
   font-weight: 500;
@@ -175,8 +163,6 @@ a {
 }
 
 .art-heart {
-  /* border: 1px solid yellow;
-  padding: 5px; */
   width: 20px;
   height: 20px;
   display: flex;
@@ -274,7 +260,6 @@ footer a {
   }
 
   .nav-menu {
-    /* border: 2px solid #222222; */
     position: fixed;
     width: 100vw;
     height: 100vh;
