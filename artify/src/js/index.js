@@ -43,6 +43,11 @@ const fetchImagesForPage = async (page) => {
           </div>`
         );
       });
+      
+      const favCount = document.querySelector('.fav-count'); // Select the first element with the class 'fav-count'
+      if (favCount) {
+        favCount.textContent = FavState.getFavourite.length.toString(); // Convert the number to a string and update the text content
+      }
 
       artGallery.innerHTML += getUrls.join('');
 
@@ -51,7 +56,7 @@ const fetchImagesForPage = async (page) => {
       heartImages.forEach((heartImage) => {
         const imageId = heartImage.getAttribute('data-id');
         heartImage.addEventListener('click', () => {
-          console.log(imageId);
+          
 
           if (!heartImage.src.endsWith(EmptyHeart)) {
             // Change the image to empty and update the 'isFilled' flag
@@ -62,6 +67,10 @@ const fetchImagesForPage = async (page) => {
             heartImage.src = FilledHeart;
             FavState.setFavourite = imageId;
           }
+          const favCount = document.querySelector('.fav-count'); // Select the first element with the class 'fav-count'
+      if (favCount) {
+        favCount.textContent = FavState.getFavourite.length.toString(); // Convert the number to a string and update the text content
+      }
         });
       });
     }

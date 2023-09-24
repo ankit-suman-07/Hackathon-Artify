@@ -49,7 +49,7 @@ nav {
 }
 .main-div {
   /* border: 2px solid #222222; */
-  margin: 5px 0 5px 0;
+  margin: 10px 0 10px 0;
   min-height: calc(100vh - 60px);
 }
 
@@ -58,30 +58,29 @@ nav {
   width: 100%;
   display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 5px;
-  }
+    grid-gap: 10px;
+    }
   
-  .art {
+.art {
     /* border: 2px solid black; */
     display: flex;
       flex-direction: column;
-  }
+}
   
-  .art img {
+.art img {
     width: 100%;
     aspect-ratio: 1/1;
-    
-    }
-    
-    .art-details {
+}
+
+.art-details {
       border: 2px solid #222222;
       height: 40px;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-    }
+}
     
-    .art-name {
+.art-name {
       /* border: 1px solid green;
               background-color: red; */
       width: calc(100% - 30px);
@@ -89,10 +88,9 @@ nav {
       font-weight: 500;
       display: flex;
       justify-content: center;
-      align-items: center;
-    }
+}
     
-    .art-heart {
+.art-heart {
       /* border: 1px solid yellow; */
       width: 20px;
       height: 20px;
@@ -108,7 +106,12 @@ nav {
 #nextButton {
   border: 2px solid black;
   width: 100%;
-  margin: 0 0 5px 0;
+  margin: 0 0 10px 0;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffff;
+    background-color: #333333;
 }
 footer {
   border: 2px solid #222222;

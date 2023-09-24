@@ -1,5 +1,7 @@
 import { unsplash } from "./index.js";
 import FavState from "./favState.js";
+import EmptyHeart from "../assets/empty.png";
+import FilledHeart from "../assets/filled.png";
 
 
 const artGallery = document.querySelector('.art-gallery');
@@ -20,7 +22,9 @@ const displayID = async () => {
     });
 
       const getUrls = photos.map((i) => {
-          console.log(photos.length);
+          const favList = FavState.getFavourite;
+        const isFavorite = favList.includes(i.response.id);
+        const src = isFavorite ? FilledHeart : EmptyHeart;
           
       if (fav.includes(i.response.id)) {
         return (
@@ -29,7 +33,8 @@ const displayID = async () => {
             <div class="art-details">
               <div class="art-heart">
                 <img 
-                  data-id="${i.id}"
+                  src="${src}" 
+                  data-id="${i.response.id}"
                 />
               </div>
               <div class="art-name">${i.response.user.name}</div>
@@ -38,9 +43,37 @@ const displayID = async () => {
         );
       }
       return ''; // Return an empty string for non-favorite photos
-    });
+      });
+      const favCount = document.querySelector('.fav-count'); // Select the first element with the class 'fav-count'
+if (favCount) {
+  favCount.textContent = photos.length.toString(); // Convert the number to a string and update the text content
+}
+
 
       artGallery.innerHTML = getUrls.join('');
+      // Add event listeners to the heart images for this page
+      const heartImages = document.querySelectorAll('.art-heart img');
+      heartImages.forEach((heartImage) => {
+        const imageId = heartImage.getAttribute('data-id');
+        heartImage.addEventListener('click', () => {
+          
+
+          if (!heartImage.src.endsWith(EmptyHeart)) {
+            // Change the image to empty and update the 'isFilled' flag
+            heartImage.src = EmptyHeart;
+            FavState.removeFav(imageId);
+          }
+          else {
+            heartImage.src = FilledHeart;
+            FavState.setFavourite = imageId;
+          }
+          const favCount = document.querySelector('.fav-count'); // Select the first element with the class 'fav-count'
+if (favCount) {
+  favCount.textContent = photos.length.toString(); // Convert the number to a string and update the text content
+}
+
+        });
+      });
       
 
   } catch (error) {
