@@ -1,39 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your JavaScript Playground</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-      <nav>
-        <div class="nav-logo" >
-          ARTIFY
-        </div>
-        <div class="nav-menu" >
-          <a href="./index.html" class="nav-link selected">Home</a>
-          <a href="./pages/modern.html" class="nav-link">Modern</a>
-          <a href="./pages/classic.html" class="nav-link">Classics</a>
-          <a href="./pages/contemporary.html" class="nav-link">Contemporary</a>
-          <a href="./pages/painting.html" class="nav-link link-btn">Painting</a>
-          <a href="./pages/sculpture.html" class="nav-link">Sculptures</a>
-          <a href="./pages/abstract.html" class="nav-link">Abstract</a>
-          <a href="./pages/favourite.html" class="nav-link link-btn">
-            <span>Favourite</span>
-            <span class="fav-count">0</span>
-          </a>
-        </div>
-      </nav>
-      <div class="main-div" >
-        <div class="art-gallery" >
-          
-        </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your JavaScript Playground</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <nav>
+    <a href="./index.html">
+      <div class="nav-logo">
+        ARTIFY
       </div>
-      <button id="nextButton">Load More</button>
-      <footer>
-        Made by ankitsuman07@gmail.com
-      </footer>
-    <script type="module" src="js/index.js"></script>
-  </body>
+    </a>
+    <div class="nav-menu">
+      <a href="./index.html" class="nav-link selected">Home</a>
+      <a href="./pages/modern.html" class="nav-link">Modern</a>
+      <a href="./pages/classic.html" class="nav-link">Classics</a>
+      <a href="./pages/contemporary.html" class="nav-link">Contemporary</a>
+      <a href="./pages/painting.html" class="nav-link link-btn">Painting</a>
+      <a href="./pages/sculpture.html" class="nav-link">Sculptures</a>
+      <a href="./pages/abstract.html" class="nav-link">Abstract</a>
+      <a href="./pages/favourite.html" class="nav-link link-btn">
+        <span>Favourite</span>
+        <span class="fav-count">0</span>
+      </a>
+      <div class="burger-menu">&#9776;</div>
+    </div>
+  </nav>
+  <div class="main-div">
+    <div class="art-gallery">
+
+    </div>
+  </div>
+  <button id="nextButton">Load More</button>
+  <footer>
+    Made by ankitsuman07@gmail.com
+  </footer>
+  <script type="module" src="js/index.js"></script>
+  <script type="module" src="js/togglenavbar.js"></script>
+</body>
+
 </html>

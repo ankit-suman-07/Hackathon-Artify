@@ -23,9 +23,27 @@ nav {
 
 .nav-logo {
   margin-left: 10px;
+  color: #222222;
   font-size: 30px;
   font-weight: 800;
+  text-decoration: none;
   /* border: 2px solid black; */
+}
+
+a {
+  text-decoration: none;
+}
+
+.burger-menu {
+  /* border: 2px solid #ffff; */
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  font-size: 35px;
+  font-weight: 800;
+  right: 10px;
+  top: 10px;
+  display: none;
 }
 
 .nav-menu {
@@ -181,6 +199,35 @@ footer {
 @media screen and (max-width: 1000px) {
   .art-gallery {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .burger-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .burger-menu:hover {
+    cursor: pointer;
+  }
+
+  .nav-menu {
+    /* border: 2px solid #222222; */
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: -100%;
+    left: 0;
+
+    background-color: #ffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .nav-menu.active {
+    top: 0;
   }
 }
 
