@@ -35,12 +35,13 @@ const fetchImagesForPage = async (page) => {
 
         return (
           `<div class="art">
-            <img src="${i.urls.regular}" />
+            <img src="${i.urls.regular}" alt="Demo-image"  />
             <div class="art-details">
               <div class="art-heart">
                 <img 
                   src="${src}" 
                   data-id="${i.id}"
+                   alt="Demo-image" 
                 />
               </div>
               <a href="/pages/imagePage.html" class="art-view-btn" data-id="${i.id}" > View Image </a>

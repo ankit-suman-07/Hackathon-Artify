@@ -36,6 +36,7 @@ const displayImage = async () => {
                             <img
                                 src="${src}" 
                                 data-id="${photoData.id}"
+                                 alt="Demo-image" 
                             />
                         </div>
                         <a href="${photoData.user.portfolio_url}" >
@@ -43,6 +44,7 @@ const displayImage = async () => {
                             <img
                                 src="${photoData.user.profile_image.medium}" 
                                 data-id="${photoData.id}"
+                                 alt="Demo-image" 
                             />
                         </div>
                         </a>

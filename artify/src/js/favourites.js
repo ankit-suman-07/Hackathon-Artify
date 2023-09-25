@@ -30,7 +30,7 @@ const displayID = async () => {
       if (fav.includes(i.response.id)) {
         return (
           `<div class="art">
-            <img src="${i.response.urls.regular}" />
+            <img src="${i.response.urls.regular}"  alt="Demo-image" />
             <div class="art-details">
               <div class="art-heart">
                 <img 
